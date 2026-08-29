@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_PATH: /app/.data/zapasometr.db
+    env_file:
+      - .env
+    volumes:
+      - zapasometr-data:/app/.data
+    restart: unless-stopped
+volumes:
+  zapasometr-data:

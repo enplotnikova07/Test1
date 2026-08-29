@@ -1,0 +1,17 @@
+{
+  "name": "inventory-management",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "bootstrap-admin": "node scripts/bootstrap-admin.mjs",
+    "check": "node --check server.mjs && node --check public/app.js && node --check scripts/bootstrap-admin.mjs && node --check scripts/backup.mjs && node --check scripts/restore-backup.mjs",
+    "test": "node tests/stage1-check.mjs && node tests/stage2-check.mjs && node tests/stage3-check.mjs && node tests/stage4-check.mjs && node tests/stage5-check.mjs && node tests/stage6-check.mjs",
+    "backup": "node scripts/backup.mjs",
+    "restore-backup": "node scripts/restore-backup.mjs"
+  },
+  "dependencies": {
+    "xlsx": "0.18.5"
+  }
+}
