@@ -23,6 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+        with:
+          # Создаёт конфигурацию Pages, если она ещё не включена в репозитории.
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
